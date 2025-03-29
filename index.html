@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo"> <img src="ani.gif" alt="Logo" srcset="" style="height: 4rem;"></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Front page Section -->
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 style="font-family: 'Times New Roman', Times, serif;">Welcome to My Portfolio</h1>
+            <p>Full Stack Web Developer</p>
+            <p>AI/ML Enthusiast</p>
+            <p>working on making the world a better place through technology</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+
+    <!-- Scroll Down Section -->
+    <!-- About Section -->
+    <section id="about" class="about">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="container" data-aos="fade-up">
+                        <h2 style="font-family: 'Times New Roman', Times, serif;">About Me</h2>
+                    </div>
+                    <p data-aos="fade-up">I am a dedicated Full-Stack Web Developer with a proven ability to deliver comprehensive web solutions. My expertise encompasses both the visual artistry of the frontend and the structural integrity of the backend, ensuring a holistic approach to development.
+                        <br>
+                        <ul data-aos="fade-up" style="margin: 2%;">
+                            <li>
+                                <h3 style="font-family: 'Times New Roman', Times, serif;">Modern Frontend Development:</h3> Adept at leveraging React-Vite, JavaScript, HTML, CSS, and Tailwind CSS to build interactive and visually appealing applications.
+                            </li>
+                            <li>
+                                <h3 style="font-family: 'Times New Roman', Times, serif;">Robust Backend Systems:</h3> Experienced in handling backend logic, database design and management using MySQL and MongoDB, and implementing essential security measures.
+                            </li>
+                            <li>
+                                <h3 style="font-family: 'Times New Roman', Times, serif;">Commitment to Excellence:</h3> Focused on writing efficient and maintainable code, optimizing performance, and continuously learning to stay at the forefront of web development trends.
+                            </li>
+                        </ul>
+                    </p>
+                    <p data-aos="fade-up">
+                        Problem-solving is at my core, and I am passionate about pushing the boundaries of web development by integrating new technologies and constantly striving for enhanced user experiences and scalable architectures.
+                    </p>
+                </div>
+                <div class="about-image" data-aos="fade-up">
+                    <img src="IMG-20231006-WA0011.jpg" alt="Profile Picture">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container" data-aos="fade-up">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-react"></i>
+                    <h3>React</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-tailwindcss"></i>
+                    <h3>Tailwind CSS</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-java"></i>
+                    <h3>Java</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Projects Section -->
+
+
+
+    <section id="projects" class="projects">
+        <div class="container" data-aos="fade-up">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images.jpg" alt="Project 1">
+                    <h3>E-Commerce Website (MERN Stack)</h3>
+                    <p style="text-align: justify; ">This fully functional E-Commerce platform is built using the MERN stack, featuring MongoDB for database management, React-Vite + Tailwind CSS for a dynamic frontend, and a Node.js + Express.js backend for seamless server operations. The website is fully customizable, allowing easy frontend modifications. With optimized performance and scalability, this project demonstrates my ability to develop robust, full-stack web applications. </p>
+                    <div class="project-links">
+                        <a href="https://github.com/Ri-Verma/E-commerce_Website" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="yolo.webp" alt="Project 2">
+                    <h3>Backend Payment Gateway</h3>
+                    <p style="text-align: justify;">Backend_Payment_Gateway is a Node.js-based secure transaction system with a MySQL database (locally hosted, but adaptable to online hosting). It verifies users before generating a bcrypt-encrypted token for payment, ensuring authenticity. Once the transaction is completed, the token is destroyed, and payment details (user ID, amount, etc.) are securely stored. While actual UPI payments require legal verification, this system provides a secure and scalable payment framework ready for real-world integration. </p>
+                    <div class="project-links">
+                        <a href="https://github.com/Ri-Verma/Backend_Payment_Gateway/tree/master" target="_blank" class="project-link">GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="vehicle.webp" alt="Project 2">
+                    <h3>Vehicle Rental Control Hub</h3>
+                    <p style="text-align: justify;">A user-friendly car rental application built with Python and MySQL for seamless booking and secure data management. Users can select their preferred car company and model, and the system calculates the total rental cost instantly. All user and rental details are securely stored in an SQL database, ensuring data integrity. The intuitive interface enhances the experience, making the rental process effortless and efficient. </p>
+                    <div class="project-links">
+                        <a href="https://github.com/Ri-Verma/Vehicle-Rental-Control-Hub" target="_blank" class="project-link">GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="colour_bandw.jpg" alt="Project 2">
+                    <h3>Image_Colourization_Mini_Project</h3>
+                    <p style="text-align: justify;">ongoing process....... </p>
+                    <div class="project-links">
+                        <a href="https://github.com/Ri-Verma/Backend_Payment_Gateway/tree/master" target="_blank" class="project-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Certifications Section -->
+
+
+    
+    <section id="certifications" class="certifications">
+        <div class="container" data-aos="fade-up">
+            <h2>Certifications</h2>
+            <br>
+            <div class="certification-card">
+                <img src="Coursera 0002.jpg" alt="Cybersecurity Certification">
+                <h3>Foundations of Cybersecurity</h3>
+                <p>Issued by Coursera | Verified Credential</p>
+                <a href="https://coursera.org/share/f161bcb5018b81cd9ee805085cad5d17" target="_blank" class="cert-link">
+                    View Certificate
+                </a>
+            </div>
+            <div class="certification-card">
+                <img src="Coursera 0001.jpg" alt="Cybersecurity Certification">
+                <h3>Play It Safe: Manage Security Risks</h3>
+                <p>Issued by Coursera | Verified Credential</p>
+                <a href="https://coursera.org/share/351d5062023d9918c89370da9897aa20" target="_blank" class="cert-link">
+                    View Certificate
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+            <h2>Contact Me</h2>
+            <h3>Get in Touch</h3>
+            <p style="font-family: 'Times New Roman', Times, serif;"> <a href="mailto:user.rishikesh@gmail.com" target="_blank" class="cert-link">Email</a> <a href="https://wa.me/916900687655" target="_blank" class="cert-link">WhatsApp</a></p>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/Ri-Verma"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/rishikesh-verma-aab4a1256/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/_r_verma._/"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2022 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
