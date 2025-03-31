@@ -13,20 +13,30 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo"> <img src="ani.gif" alt="Logo" srcset="" style="height: 4rem;"></div>
+        <div class="logo"> <img src="ani.gif" alt="Logo" srcset="" style="height: 3rem;"></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <ul class="mobile-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
+    
 
     <!-- Front page Section -->
     <!-- Hero Section -->
@@ -35,7 +45,7 @@
         <div class="hero-content" data-aos="fade-up">
             <h1 style="font-family: 'Times New Roman', Times, serif;">Welcome to My Portfolio</h1>
             <p>Full Stack Web Developer</p>
-            <p>AI/ML Enthusiast</p>
+            <p>Cybersecurity Enthusiast</p>
             <p>working on making the world a better place through technology</p>
             <a href="#contact" class="cta-button">Get in Touch</a>
         </div>
@@ -78,16 +88,8 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container" data-aos="fade-up">
-            <h2>My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML5</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-css3-alt"></i>
-                    <h3>CSS3</h3>
-                </div>
+            <h2 style="font-family: 'Times New Roman', Times, serif; justify-self: center; font-size: 2rem;">My Skills</h2>
+            <div class="skills-grid" data-aos="fade-up">
                 <div class="skill-card">
                     <i class="fab fa-js"></i>
                     <h3>JavaScript</h3>
@@ -97,13 +99,24 @@
                     <h3>React</h3>
                 </div>
                 <div class="skill-card">
-                    <i class="fab fa-tailwindcss"></i>
-                    <h3>Tailwind CSS</h3>
-                </div>
-                <div class="skill-card">
                     <i class="fab fa-java"></i>
                     <h3>Java</h3>
                 </div>
+                <div class="skill-card">
+                    <i class="fab fa-node"></i>
+                    <h3>Node</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Cybersecurity</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fas fa-microchip"></i>
+                    <h3>AI/ML</h3>
+                </div>
+
+                
             </div>
         </div>
     </section>
@@ -117,9 +130,10 @@
 
     <section id="projects" class="projects">
         <div class="container" data-aos="fade-up">
-            <h2>My Projects</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif; justify-self: center; font-size: 2rem;">My Projects</h2>
+            <br>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up">
                     <img src="images.jpg" alt="Project 1">
                     <h3>E-Commerce Website (MERN Stack)</h3>
                     <p style="text-align: justify; ">This fully functional E-Commerce platform is built using the MERN stack, featuring MongoDB for database management, React-Vite + Tailwind CSS for a dynamic frontend, and a Node.js + Express.js backend for seamless server operations. The website is fully customizable, allowing easy frontend modifications. With optimized performance and scalability, this project demonstrates my ability to develop robust, full-stack web applications. </p>
@@ -127,7 +141,7 @@
                         <a href="https://github.com/Ri-Verma/E-commerce_Website" class="project-link" target="_blank">GitHub</a>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up">
                     <img src="yolo.webp" alt="Project 2">
                     <h3>Backend Payment Gateway</h3>
                     <p style="text-align: justify;">Backend_Payment_Gateway is a Node.js-based secure transaction system with a MySQL database (locally hosted, but adaptable to online hosting). It verifies users before generating a bcrypt-encrypted token for payment, ensuring authenticity. Once the transaction is completed, the token is destroyed, and payment details (user ID, amount, etc.) are securely stored. While actual UPI payments require legal verification, this system provides a secure and scalable payment framework ready for real-world integration. </p>
@@ -135,7 +149,7 @@
                         <a href="https://github.com/Ri-Verma/Backend_Payment_Gateway/tree/master" target="_blank" class="project-link">GitHub</a>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up">
                     <img src="vehicle.webp" alt="Project 2">
                     <h3>Vehicle Rental Control Hub</h3>
                     <p style="text-align: justify;">A user-friendly car rental application built with Python and MySQL for seamless booking and secure data management. Users can select their preferred car company and model, and the system calculates the total rental cost instantly. All user and rental details are securely stored in an SQL database, ensuring data integrity. The intuitive interface enhances the experience, making the rental process effortless and efficient. </p>
@@ -143,7 +157,7 @@
                         <a href="https://github.com/Ri-Verma/Vehicle-Rental-Control-Hub" target="_blank" class="project-link">GitHub</a>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up">
                     <img src="colour_bandw.jpg" alt="Project 2">
                     <h3>Image_Colourization_Mini_Project</h3>
                     <p style="text-align: justify;">ongoing process....... </p>
@@ -162,23 +176,25 @@
     
     <section id="certifications" class="certifications">
         <div class="container" data-aos="fade-up">
-            <h2>Certifications</h2>
+            <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 2rem; text-align: center;">Certifications</h2>
             <br>
-            <div class="certification-card">
-                <img src="Coursera 0002.jpg" alt="Cybersecurity Certification">
-                <h3>Foundations of Cybersecurity</h3>
-                <p>Issued by Coursera | Verified Credential</p>
-                <a href="https://coursera.org/share/f161bcb5018b81cd9ee805085cad5d17" target="_blank" class="cert-link">
-                    View Certificate
-                </a>
-            </div>
-            <div class="certification-card">
-                <img src="Coursera 0001.jpg" alt="Cybersecurity Certification">
-                <h3>Play It Safe: Manage Security Risks</h3>
-                <p>Issued by Coursera | Verified Credential</p>
-                <a href="https://coursera.org/share/351d5062023d9918c89370da9897aa20" target="_blank" class="cert-link">
-                    View Certificate
-                </a>
+            <div class="certi-grid">
+                <div class="certification-card" data-aos="fade-up" style="justify-self: center;">
+                    <img src="Coursera 0002.jpg" alt="Cybersecurity Certification">
+                    <h3>Foundations of Cybersecurity</h3>
+                    <p>Issued by Coursera | Verified Credential</p>
+                    <a href="https://coursera.org/share/f161bcb5018b81cd9ee805085cad5d17" target="_blank" class="cert-link">
+                        View Certificate
+                    </a>
+                </div>
+                <div class="certification-card" data-aos="fade-up" style="justify-self: center;">
+                    <img src="Coursera 0001.jpg" alt="Cybersecurity Certification">
+                    <h3>Play It Safe: Manage Security Risks</h3>
+                    <p>Issued by Coursera | Verified Credential</p>
+                    <a href="https://coursera.org/share/351d5062023d9918c89370da9897aa20" target="_blank" class="cert-link">
+                        View Certificate
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -187,8 +203,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
-            <h2>Contact Me</h2>
-            <h3>Get in Touch</h3>
+            <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 2rem;">Contact Me</h2>
             <p style="font-family: 'Times New Roman', Times, serif;"> <a href="mailto:user.rishikesh@gmail.com" target="_blank" class="cert-link">Email</a> <a href="https://wa.me/916900687655" target="_blank" class="cert-link">WhatsApp</a></p>
 
         </div>

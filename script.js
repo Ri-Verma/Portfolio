@@ -186,3 +186,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // [Rest of your existing code for navigation, scroll behavior, etc. remains the same]
+document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.querySelector(".burger");
+    const mobileNav = document.querySelector(".mobile-nav");
+
+    // Toggle Mobile Menu
+    burger.addEventListener("mouseenter", () => {
+        mobileNav.classList.add("active");
+    });
+
+    mobileNav.addEventListener("mouseleave", () => {
+        mobileNav.classList.remove("active");
+    });
+});
