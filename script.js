@@ -1,17 +1,16 @@
-// Initialize AOS
 AOS.init({
     duration: 1000,
     once: true
 });
 
-// Canvas Animation Setup
+//Canvas Animation Setup
 document.addEventListener('DOMContentLoaded', function() {
     const canvas = document.getElementById('hero-canvas');
     const ctx = canvas.getContext('2d');
     let nodes = [];
     let dataBlocks = [];
     
-    // Set canvas size
+    //canvas size
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -92,12 +91,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Create nodes and data blocks
+    // nodes and data blocks
     function init() {
         nodes = [];
         dataBlocks = [];
         
-        // Create nodes in a circular pattern
+        //  nodes in a circular pattern
         const numNodes = 15;
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
@@ -112,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nodes.push(node);
         }
 
-        // Create data blocks
+        //data blocks
         for (let i = 0; i < 20; i++) {
             dataBlocks.push(new DataBlock());
         }
@@ -162,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
             block.draw();
         });
 
-        // Add glow effect
+        //glow effect
         ctx.globalCompositeOperation = 'lighter';
         nodes.forEach(node => {
             const gradient = ctx.createRadialGradient(
@@ -185,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
     animate();
 });
 
-// [Rest of your existing code for navigation, scroll behavior, etc. remains the same]
+// [Rest of the existing code for navigation, scroll behavior, etc. remains the same]
 document.addEventListener("DOMContentLoaded", function () {
     const burger = document.querySelector(".burger");
     const mobileNav = document.querySelector(".mobile-nav");
@@ -193,6 +192,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Toggle Mobile Menu
     burger.addEventListener("mouseenter", () => {
         mobileNav.classList.add("active");
+    });
+    burger.addEventListener("mouseleave", () => {
+        mobileNav.classList.remove("active");
     });
 
     mobileNav.addEventListener("mouseleave", () => {
