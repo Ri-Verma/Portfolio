@@ -1,226 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo"> <img src="ani.gif" alt="Logo" srcset="" style="height: 3rem;"></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0e27" />
+    <meta name="description" content="Portfolio website of a Full-Stack Developer and Software Engineer" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dev Portfolio - Software Engineer</title>
+  </head>
+  <body>
+    <nav id="navbar" class="navbar">
+      <div class="nav-container">
+        <h2 class="logo">DEV.PORTFOLIO</h2>
+        <button id="hamburger" class="hamburger">
+          <span class="hamburger-line line1"></span>
+          <span class="hamburger-line line2"></span>
+          <span class="hamburger-line line3"></span>
+        </button>
+        <ul id="nav-menu" class="nav-links">
+          <li><a href="#hero" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#certifications" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
-        <div class="burger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-            <ul class="mobile-nav">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+      </div>
     </nav>
-    
 
-    <!-- Front page Section -->
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <canvas id="hero-canvas"></canvas>
-        <div class="hero-content" data-aos="fade-up">
-            <h1 style="font-family: 'Times New Roman', Times, serif;">Crafting the Future, One Line of Code at a Time</h1>
-            <p>Web Developer | Ethical Hacker | Tech Explorer</p>
-            <p>Innovating today for a smarter tomorrow</p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
-        </div>
+    <section id="hero" class="section hero" data-parallax="0.5">
+      <div class="parallax-bg"></div>
+      <div class="content">
+        <h1 class="hero-title">Welcome to My Digital Universe</h1>
+        <p class="hero-subtitle">Full-Stack Developer | Software Engineer</p>
+        <div class="cursor-blink"></div>
+      </div>
     </section>
 
-
-    <!-- Scroll Down Section -->
-    <!-- About Section -->
-    <section id="about" class="about">
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="container" data-aos="fade-up">
-                        <h2 style="font-family: 'Times New Roman', Times, serif;">About Me</h2>
-                    </div>
-                    <p data-aos="fade-up">I am a dedicated Full-Stack Web Developer with a proven ability to deliver comprehensive web solutions. My expertise encompasses both the visual artistry of the frontend and the structural integrity of the backend, ensuring a holistic approach to development.
-                        <br>
-                        <ul data-aos="fade-up" style="margin: 2%;">
-                            <li>
-                                <h3 style="font-family: 'Times New Roman', Times, serif;">Modern Frontend Development:</h3> Adept at leveraging React, JavaScript, HTML, CSS, and Tailwind CSS to build interactive and visually appealing applications.
-                            </li>
-                            <li>
-                                <h3 style="font-family: 'Times New Roman', Times, serif;">Robust Backend Systems:</h3> Experienced in handling backend logic, database design and management using MySQL and MongoDB, and implementing essential security measures.
-                            </li>
-                            <li>
-                                <h3 style="font-family: 'Times New Roman', Times, serif;">Commitment to Excellence:</h3> Focused on writing efficient and maintainable code, optimizing performance, and continuously learning to stay at the forefront of web development trends.
-                            </li>
-                        </ul>
-                    </p>
-                    <p data-aos="fade-up">
-                        Problem-solving is at my core, and I am passionate about pushing the boundaries of web development by integrating new technologies and constantly striving for enhanced user experiences and scalable architectures.
-                    </p>
-                </div>
-                <div class="about-image" data-aos="fade-up">
-                    <img src="IMG-20231006-WA0011.jpg" alt="Profile Picture">
-                </div>
+    <section id="about" class="section about" data-parallax="0.3">
+      <div class="parallax-bg"></div>
+      <div class="card-content">
+        <h1 class="section-title">About Me</h1>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I'm a passionate web developer and software engineer with expertise in creating
+              beautiful, functional, and scalable applications. My journey in tech is driven by
+              a love for solving complex problems and building user-centric solutions.
+            </p>
+            <p>
+              With a strong foundation in full-stack development, I specialize in modern web
+              technologies and best practices that bring ideas to life.
+            </p>
+          </div>
+          <div class="tech-stack">
+            <h3>Tech Stack</h3>
+            <div class="tech-items">
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">HTML/CSS</span>
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">MongoDB</span>
+              <span class="tech-badge">Web Design</span>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container" data-aos="fade-up">
-            <h2 style="font-family: 'Times New Roman', Times, serif; justify-self: center; font-size: 2rem;">My Skills</h2>
-            <div class="skills-grid" data-aos="fade-up">
-                <div class="skill-card">
-                    <i class="fab fa-js"></i>
-                    <h3>JavaScript</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-react"></i>
-                    <h3>React</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-java"></i>
-                    <h3>Java</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-node"></i>
-                    <h3>Node</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-lock"></i>
-                    <h3>Cybersecurity</h3>
-                </div>
+    <section id="projects" class="section projects" data-parallax="0.4">
+      <div class="parallax-bg"></div>
+      <div class="card-content">
+        <h1 class="section-title">Featured Projects</h1>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-icon">📱</div>
+            <h3>Personal Blog Website</h3>
+            <p>A responsive blog platform built with React and Firebase, featuring real-time updates and user authentication.</p>
+          </div>
+          <div class="project-card">
+            <div class="project-icon">🛒</div>
+            <h3>E-Commerce Platform</h3>
+            <p>Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.</p>
+          </div>
+          <div class="project-card">
+            <div class="project-icon">💼</div>
+            <h3>Portfolio Website</h3>
+            <p>Interactive portfolio with parallax scrolling, animations, and smooth transitions using anime.js.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <div class="skill-card">
-                    <i class="fas fa-microchip"></i>
-                    <h3>AI/ML</h3>
-                </div>
-
-                
+    <section id="certifications" class="section certifications" data-parallax="0.35">
+      <div class="parallax-bg"></div>
+      <div class="card-content">
+        <h1 class="section-title">Certifications & Skills</h1>
+        <div class="certifications-list">
+          <div class="cert-item">
+            <div class="cert-number">01</div>
+            <div class="cert-details">
+              <h3>Web Development Bootcamp</h3>
+              <p>Issued by XYZ Institute</p>
             </div>
-        </div>
-    </section>
-
-
-
-
-    <!-- Projects Section -->
-
-
-
-    <section id="projects" class="projects">
-        <div class="container" data-aos="fade-up">
-            <h2 style="font-family: 'Times New Roman', Times, serif; justify-self: center; font-size: 2rem;">My Projects</h2>
-            <br>
-            <div class="projects-grid">
-                <div class="project-card" data-aos="fade-up">
-                    <img src="images.jpg" alt="Project 1">
-                    <h3>E-Commerce Website (MERN Stack)</h3>
-                    <p style="text-align: justify; ">This fully functional E-Commerce platform is built using the MERN stack, featuring MongoDB for database management, React-Vite + Tailwind CSS for a dynamic frontend, and a Node.js + Express.js backend for seamless server operations. The website is fully customizable, allowing easy frontend modifications. With optimized performance and scalability, this project demonstrates my ability to develop robust, full-stack web applications. </p>
-                    <div class="project-links">
-                        <a href="https://github.com/Ri-Verma/E-commerce_Website" class="project-link" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card" data-aos="fade-up">
-                    <img src="yolo.webp" alt="Project 2">
-                    <h3>Backend Payment Gateway</h3>
-                    <p style="text-align: justify;">Backend_Payment_Gateway is a Node.js-based secure transaction system with a MySQL database (locally hosted, but adaptable to online hosting). It verifies users before generating a bcrypt-encrypted token for payment, ensuring authenticity. Once the transaction is completed, the token is destroyed, and payment details (user ID, amount, etc.) are securely stored. While actual UPI payments require legal verification, this system provides a secure and scalable payment framework ready for real-world integration. </p>
-                    <div class="project-links">
-                        <a href="https://github.com/Ri-Verma/Backend_Payment_Gateway/tree/master" target="_blank" class="project-link">GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card" data-aos="fade-up">
-                    <img src="vehicle.webp" alt="Project 2">
-                    <h3>Vehicle Rental Control Hub</h3>
-                    <p style="text-align: justify;">A user-friendly car rental application built with Python and MySQL for seamless booking and secure data management. Users can select their preferred car company and model, and the system calculates the total rental cost instantly. All user and rental details are securely stored in an SQL database, ensuring data integrity. The intuitive interface enhances the experience, making the rental process effortless and efficient. </p>
-                    <div class="project-links">
-                        <a href="https://github.com/Ri-Verma/Vehicle-Rental-Control-Hub" target="_blank" class="project-link">GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card" data-aos="fade-up">
-                    <img src="colour_bandw.jpg" alt="Project 2">
-                    <h3>Image_Colourization_Mini_Project</h3>
-                    <p style="text-align: justify;">ongoing process....... </p>
-                    <div class="project-links">
-                        <a href="https://github.com/Ri-Verma/Backend_Payment_Gateway/tree/master" target="_blank" class="project-link">GitHub</a>
-                    </div>
-                </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-number">02</div>
+            <div class="cert-details">
+              <h3>Advanced JavaScript</h3>
+              <p>Issued by ABC Academy</p>
             </div>
-        </div>
-    </section>
-
-
-    <!-- Certifications Section -->
-
-
-    
-    <section id="certifications" class="certifications">
-        <div class="container" data-aos="fade-up">
-            <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 2rem; text-align: center;">Certifications</h2>
-            <br>
-            <div class="certi-grid">
-                <div class="certification-card" data-aos="fade-up" style="justify-self: center;">
-                    <img src="Coursera 0002.jpg" alt="Cybersecurity Certification">
-                    <h3>Foundations of Cybersecurity</h3>
-                    <p>Issued by Coursera | Verified Credential</p>
-                    <a href="https://coursera.org/share/f161bcb5018b81cd9ee805085cad5d17" target="_blank" class="cert-link">
-                        View Certificate
-                    </a>
-                </div>
-                <div class="certification-card" data-aos="fade-up" style="justify-self: center;">
-                    <img src="Coursera 0001.jpg" alt="Cybersecurity Certification">
-                    <h3>Play It Safe: Manage Security Risks</h3>
-                    <p>Issued by Coursera | Verified Credential</p>
-                    <a href="https://coursera.org/share/351d5062023d9918c89370da9897aa20" target="_blank" class="cert-link">
-                        View Certificate
-                    </a>
-                </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-number">03</div>
+            <div class="cert-details">
+              <h3>Responsive Web Design</h3>
+              <p>Issued by DEF Organization</p>
             </div>
+          </div>
         </div>
-    </section>
-    
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container" data-aos="fade-up">
-            <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 2rem;">Contact Me</h2>
-            <p style="font-family: 'Times New Roman', Times, serif;"> <a href="mailto:user.rishikesh@gmail.com" target="_blank" class="cert-link">Email</a> <a href="https://wa.me/916900687655" target="_blank" class="cert-link">WhatsApp</a></p>
-
-        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="social-links">
-            <a href="https://github.com/Ri-Verma" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/rishikesh-verma-aab4a1256/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/_r_verma._/" target="_blank"><i class="fab fa-instagram"></i></a>
-            
+    <section id="contact" class="section contact" data-parallax="0.25">
+      <div class="parallax-bg"></div>
+      <div class="card-content">
+        <h1 class="section-title">Get In Touch</h1>
+        <div class="contact-box">
+          <p>I'd love to hear from you. Let's connect and create something amazing together.</p>
+          <a href="mailto:user.rishikesh@gmail.com" class="contact-link">
+            user.rishikesh@gmail.com
+          </a>
+          <div class="social-links">
+            <a href="#" class="social-badge">GitHub</a>
+            <a href="#" class="social-badge">LinkedIn</a>
+            <a href="#" class="social-badge">Twitter</a>
+          </div>
         </div>
-        <p>&copy; 2022 My Portfolio. All rights reserved.</p>
-    </footer>
+      </div>
+    </section>
 
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
