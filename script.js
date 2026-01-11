@@ -1,24 +1,3 @@
-import { animate, stagger, splitText } from 'animejs';
-
-const { chars } = splitText('h2', { words: false, chars: true });
-
-animate(chars, {
-  // Property keyframes
-  y: [
-    { to: '-2.75rem', ease: 'outExpo', duration: 600 },
-    { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
-  ],
-  // Property specific parameters
-  rotate: {
-    from: '-1turn',
-    delay: 0
-  },
-  delay: stagger(50),
-  ease: 'inOutCirc',
-  loopDelay: 1000,
-  loop: true
-});
-
 // Hamburger menu toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
@@ -50,35 +29,33 @@ function isMobileDevice() {
   return window.matchMedia('(max-width: 768px)').matches;
 }
 
-// Enhanced Parallax effect with overlapping layers
 let ticking = false;
 
 function updateParallax() {
   const scrolled = window.pageYOffset;
   const isMobile = isMobileDevice();
-  
+
   document.querySelectorAll('[data-parallax]').forEach(section => {
     let parallaxValue = parseFloat(section.dataset.parallax);
-    
-    // Reduce parallax effect on mobile for better performance
+
     if (isMobile) {
       parallaxValue *= 0.5;
     }
-    
+
     const sectionTop = section.offsetTop;
     const sectionHeight = section.offsetHeight;
     const windowHeight = window.innerHeight;
-    
-    // Calculate section visibility progress
+
+
     const scrollProgress = (scrolled + windowHeight - sectionTop) / (sectionHeight + windowHeight);
-    
-    // Multi-layer parallax effect
+
+
     const offset = scrolled * parallaxValue;
     const scale = 1 + (scrollProgress * 0.03);
     const rotateX = scrollProgress * 1;
-    
+
     const bg = section.querySelector('.parallax-bg');
-    
+
     if (bg) {
       if (isMobile) {
         bg.style.transform = `translateY(${offset}px)`;
@@ -86,15 +63,21 @@ function updateParallax() {
         bg.style.transform = `translateY(${offset}px) scale(${scale}) perspective(1000px) rotateX(${rotateX}deg)`;
       }
     }
-    
-    // Content parallax
+
+    // Content parallax - use relative offset from section
     const content = section.querySelector('.content, .card-content');
     if (content && !isMobile) {
-      const contentOffset = scrolled * (parallaxValue * 0.5);
+      // Calculate how far the section is from the viewport center
+      const sectionCenter = sectionTop + (sectionHeight / 2);
+      const viewportCenter = scrolled + (windowHeight / 2);
+      const distanceFromCenter = (viewportCenter - sectionCenter) / windowHeight;
+
+      // Apply a subtle parallax effect relative to section position
+      const contentOffset = distanceFromCenter * 30 * parallaxValue;
       content.style.transform = `translateY(${contentOffset}px)`;
     }
   });
-  
+
   ticking = false;
 }
 
@@ -105,7 +88,6 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-// Anime.js animations for elements on scroll
 function observeElements() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -206,7 +188,7 @@ function animateSectionTitles() {
         }
       });
     }, { threshold: 0.3 });
-    
+
     observer.observe(title);
   });
 }
@@ -229,6 +211,5 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Improve touch responsiveness
-document.addEventListener('touchstart', function() {}, { passive: true });
-document.addEventListener('touchmove', function() {}, { passive: true });
+document.addEventListener('touchstart', function () { }, { passive: true });
+document.addEventListener('touchmove', function () { }, { passive: true });

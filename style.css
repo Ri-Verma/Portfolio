@@ -169,8 +169,13 @@ body {
 }
 
 @keyframes moveGrid {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(50px); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(50px);
+  }
 }
 
 .hero-title {
@@ -192,8 +197,15 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 .cursor-blink {
@@ -206,8 +218,16 @@ body {
 }
 
 @keyframes blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Section Styling */
@@ -228,7 +248,7 @@ body {
 
 .about .parallax-bg {
   background: radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(255, 0, 110, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 80% 80%, rgba(255, 0, 110, 0.1) 0%, transparent 50%);
 }
 
 .about-grid {
@@ -280,13 +300,11 @@ body {
 }
 
 .projects .parallax-bg {
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 10px,
-    rgba(0, 217, 255, 0.03) 10px,
-    rgba(0, 217, 255, 0.03) 20px
-  );
+  background: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 10px,
+      rgba(0, 217, 255, 0.03) 10px,
+      rgba(0, 217, 255, 0.03) 20px);
 }
 
 .projects-grid {
@@ -400,7 +418,7 @@ body {
 }
 
 .contact .parallax-bg {
-  background: 
+  background:
     radial-gradient(circle at 30% 30%, rgba(0, 217, 255, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 70% 70%, rgba(255, 0, 110, 0.15) 0%, transparent 50%);
 }
@@ -509,6 +527,10 @@ body {
 }
 
 @media (max-width: 768px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -561,8 +583,10 @@ body {
   }
 
   .section {
-    min-height: auto;
-    padding: 4rem 1rem 3rem;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 5rem 1rem 3rem;
+    scroll-snap-align: start;
   }
 
   .content,
@@ -737,8 +761,7 @@ body {
   }
 
   .section {
-    min-height: auto;
-    padding: 3.5rem 0.75rem 2.5rem;
+    padding: 4rem 0.75rem 2.5rem;
   }
 
   .hero-title {
