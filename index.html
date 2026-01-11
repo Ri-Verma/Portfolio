@@ -1,57 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#0a0e27" />
-    <meta name="description" content="Portfolio website of a Full-Stack Developer and Software Engineer" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Dev Portfolio - Software Engineer</title>
-  </head>
-  <body>
-    <nav id="navbar" class="navbar">
-      <div class="nav-container">
-        <h2 class="logo">DEV.PORTFOLIO</h2>
-        <button id="hamburger" class="hamburger">
-          <span class="hamburger-line line1"></span>
-          <span class="hamburger-line line2"></span>
-          <span class="hamburger-line line3"></span>
-        </button>
-        <ul id="nav-menu" class="nav-links">
-          <li><a href="#hero" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#certifications" class="nav-link">Skills</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
 
-    <section id="hero" class="section hero" data-parallax="0.5">
-      <div class="parallax-bg"></div>
-      <div class="content">
-        <h1 class="hero-title">Welcome to My Digital Universe</h1>
-        <p class="hero-subtitle">Full-Stack Developer | Software Engineer</p>
-        <div class="cursor-blink"></div>
-      </div>
-    </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0e27" />
+  <meta name="description" content="Portfolio website of a Full-Stack Developer and Software Engineer" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Dev Portfolio - Software Engineer</title>
+</head>
 
-    <section id="about" class="section about" data-parallax="0.3">
-      <div class="parallax-bg"></div>
-      <div class="card-content">
-        <h1 class="section-title">About Me</h1>
-        <div class="about-grid">
-          <div class="about-text">
-            <img src="" alt="" srcset="">
-            <p>
-              I'm a passionate web developer and software engineer with expertise in creating
-              beautiful, functional, and scalable applications. My journey in tech is driven by
-              a love for solving complex problems and building user-centric solutions.
-            </p>
-            <p>
-              With a strong foundation in full-stack development, I specialize in modern web
-              technologies and best practices that bring ideas to life.
-            </p>
+<body>
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <h2 class="logo">DEV.PORTFOLIO</h2>
+      <button id="hamburger" class="hamburger">
+        <span class="hamburger-line line1"></span>
+        <span class="hamburger-line line2"></span>
+        <span class="hamburger-line line3"></span>
+      </button>
+      <ul id="nav-menu" class="nav-links">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="hero" class="section hero" data-parallax="0.5">
+    <div class="parallax-bg"></div>
+    <div class="content">
+      <h1 class="hero-title">Welcome to My Digital Universe</h1>
+      <p class="hero-subtitle"><span id="typing-text"></span><span class="cursor-blink">|</span></p>
+    </div>
+  </section>
+
+  <section id="about" class="section about" data-parallax="0.3">
+    <div class="parallax-bg"></div>
+    <div class="card-content">
+      <h1 class="section-title">About Me</h1>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a passionate web developer and software engineer with expertise in creating
+            beautiful, functional, and scalable applications. My journey in tech is driven by
+            a love for solving complex problems and building user-centric solutions.
+          </p>
+          <p>
+            With a strong foundation in full-stack development, I specialize in modern web
+            technologies and best practices that bring ideas to life.
+          </p>
+        </div>
+        <div class="about-profile">
+          <div class="profile-image">
+            <img src="./image/me.jpg" alt="Profile Photo">
           </div>
           <div class="tech-stack">
             <h3>Tech Stack</h3>
@@ -66,81 +70,115 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="projects" class="section projects" data-parallax="0.4">
-      <div class="parallax-bg"></div>
-      <div class="card-content">
-        <h1 class="section-title">Featured Projects</h1>
-        <div class="projects-grid">
+  <section id="projects" class="section projects" data-parallax="0.4">
+    <div class="parallax-bg"></div>
+    <div class="card-content">
+      <h1 class="section-title">Featured Projects</h1>
+      <div class="marquee-container">
+        <div class="marquee-track projects-marquee">
           <div class="project-card">
-            <div class="project-icon">📱</div>
-            <h3>Personal Blog Website</h3>
-            <p>A responsive blog platform built with React and Firebase, featuring real-time updates and user authentication.</p>
+            <div class="project-image"><img src="./image/Meme Hub Social Media Platform.png" alt="Meme Hub"></div>
+            <h3>Meme Hub Social Media</h3>
+            <p>A full-stack social media app with MySQL database, 60% optimized SQL aggregations, and secure media
+              handling with Multer.</p>
+            <a href="https://github.com/Ri-Verma/MemeHub" class="project-link" target="_blank">View on GitHub</a>
           </div>
           <div class="project-card">
-            <div class="project-icon">🛒</div>
-            <h3>E-Commerce Platform</h3>
-            <p>Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.</p>
+            <div class="project-image"><img src="./image/TerraLedger.png" alt="TerraLedger"></div>
+            <h3>TerraLedger</h3>
+            <p>Decentralized land registry on Ethereum using React, TypeScript & Solidity with smart contract ownership
+              transfer.</p>
+            <a href="https://github.com/Ri-Verma/TerraLedger" class="project-link" target="_blank">View on GitHub</a>
           </div>
           <div class="project-card">
-            <div class="project-icon">💼</div>
-            <h3>Portfolio Website</h3>
-            <p>Interactive portfolio with parallax scrolling, animations, and smooth transitions using anime.js.</p>
+            <div class="project-image"><img src="./image/vehicle.jpg" alt="Vehicle Rental Control Hub"></div>
+            <h3>Vehicle Rental Control Hub</h3>
+            <p>Vehicle Rental Control Hub Developed a robust car rental management application using Python and MySQL to
+              streamline vehicle booking operations. The system automates rental cost calculations based on real-time
+              model selection and duration, while ensuring data integrity through secure SQL storage of user profiles
+              and transaction history.</p>
+            <a href="https://github.com/Ri-Verma/Vehicle-Rental-Control-Hub" class="project-link" target="_blank">View
+              on GitHub</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="certifications" class="section certifications" data-parallax="0.35">
-      <div class="parallax-bg"></div>
-      <div class="card-content">
-        <h1 class="section-title">Certifications & Skills</h1>
-        <div class="certifications-list">
-          <div class="cert-item">
-            <div class="cert-number">01</div>
-            <div class="cert-details">
-              <h3>Web Development Bootcamp</h3>
-              <p>Issued by XYZ Institute</p>
-            </div>
+  <section id="certifications" class="section certifications" data-parallax="0.35">
+    <div class="parallax-bg"></div>
+    <div class="card-content">
+      <h1 class="section-title">Certifications & Skills</h1>
+      <div class="marquee-container">
+        <div class="marquee-track certs-marquee">
+          <div class="cert-card">
+            <div class="cert-image"><img src="./image/Coursera 0001.jpg" alt="Cybersecurity"></div>
+            <h3>Foundations of Cybersecurity</h3>
+            <p>Google</p>
           </div>
-          <div class="cert-item">
-            <div class="cert-number">02</div>
-            <div class="cert-details">
-              <h3>Advanced JavaScript</h3>
-              <p>Issued by ABC Academy</p>
+          <div class="cert-card">
+            <div class="cert-image"><img src="./image/134_Rishikesh Verma.jpg_page-0001.jpg" alt="Network Security">
             </div>
+            <h3>Cybersecurity & Network Security</h3>
+            <p>ABC Academy</p>
           </div>
-          <div class="cert-item">
-            <div class="cert-number">03</div>
-            <div class="cert-details">
-              <h3>Responsive Web Design</h3>
-              <p>Issued by DEF Organization</p>
-            </div>
+          <div class="cert-card">
+            <div class="cert-image"><img src="./image/Coursera 0001.jpg" alt="Security Risks"></div>
+            <h3>Play it Safe: Manage Security Risks</h3>
+            <p>Google</p>
+          </div>
+          <div class="cert-card">
+            <div class="cert-image"><img src="./image/certificate_of_merit.png" alt="Codegem"></div>
+            <h3>Winner at Codegem</h3>
+            <p>Dept. Information Technology</p>
+          </div>
+          <div class="cert-card">
+            <div class="cert-image"><img src="./image/website manager.jpg" alt="GDSC"></div>
+            <h3>Website Manager at GDSC</h3>
+            <p>Google Developer Student Clubs</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact" class="section contact" data-parallax="0.25">
-      <div class="parallax-bg"></div>
-      <div class="card-content">
-        <h1 class="section-title">Get In Touch</h1>
-        <div class="contact-box">
-          <p>I'd love to hear from you. Let's connect and create something amazing together.</p>
-          <a href="mailto:user.rishikesh@gmail.com" class="contact-link">
-            user.rishikesh@gmail.com
-          </a>
-          <div class="social-links">
-            <a href="#" class="social-badge">GitHub</a>
-            <a href="#" class="social-badge">LinkedIn</a>
-            <a href="#" class="social-badge">Twitter</a>
-          </div>
+  <section id="contact" class="section contact" data-parallax="0.25">
+    <div class="parallax-bg"></div>
+    <div class="card-content">
+      <h1 class="section-title">Get In Touch</h1>
+      <div class="contact-box">
+        <p>I'd love to hear from you. Let's connect and create something amazing together.</p>
+        <a href="mailto:user.rishikesh@gmail.com" class="contact-link">
+          user.rishikesh@gmail.com
+        </a>
+        <div class="social-links">
+          <a href="https://github.com/Ri-Verma" class="social-badge" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/rishikeshverma/" class="social-badge" target="_blank">LinkedIn</a>
+          <!-- <a href="https://twitter.com/RishikeshVerma" class="social-badge" target="_blank">Twitter</a> -->
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+  <!-- Certificate Modal -->
+  <div id="cert-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div class="modal-image">
+        <img id="modal-cert-image" src="" alt="Certificate">
+      </div>
+      <div class="modal-details">
+        <h2 id="modal-cert-title"></h2>
+        <p id="modal-cert-issuer"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

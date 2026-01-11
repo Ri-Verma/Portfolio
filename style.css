@@ -209,12 +209,11 @@ body {
 }
 
 .cursor-blink {
-  display: inline-block;
-  width: 2px;
-  height: 2rem;
-  background: var(--accent);
-  margin-left: 0.5rem;
-  animation: blink 1s infinite;
+  display: inline;
+  color: var(--accent);
+  font-weight: bold;
+  animation: blink 0.8s step-end infinite;
+  margin-left: 2px;
 }
 
 @keyframes blink {
@@ -258,11 +257,49 @@ body {
   align-items: center;
 }
 
+.about-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .about-text p {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
   color: var(--text-dim);
+}
+
+.about-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile-image {
+  width: 280px;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 50px rgba(0, 217, 255, 0.5);
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tech-stack {
+  text-align: center;
 }
 
 .tech-stack h3 {
@@ -274,7 +311,8 @@ body {
 .tech-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem;
+  justify-content: center;
 }
 
 .tech-badge {
@@ -307,58 +345,104 @@ body {
       rgba(0, 217, 255, 0.03) 20px);
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+/* Marquee Container */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+}
+
+.projects-marquee {
+  animation: marquee-scroll 25s linear infinite;
+}
+
+.projects-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Project Card */
 .project-card {
-  background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(30, 58, 95, 0.8));
+  flex-shrink: 0;
+  width: 350px;
+  background: linear-gradient(135deg, rgba(26, 31, 58, 0.9), rgba(30, 58, 95, 0.9));
   border: 1px solid var(--border);
-  padding: 2rem;
-  border-radius: 10px;
+  padding: 1.5rem;
+  border-radius: 15px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-  z-index: 1;
-}
-
-.project-card:hover::before {
-  left: 100%;
-}
-
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 217, 255, 0.2);
   border-color: var(--accent);
 }
 
-.project-icon {
-  font-size: 3rem;
+.project-image {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
   margin-bottom: 1rem;
+  border: 1px solid var(--border);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
 }
 
 .project-card h3 {
   color: var(--accent);
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
 }
 
 .project-card p {
   color: var(--text-dim);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.project-link {
+  display: inline-block;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background: var(--accent);
+  color: var(--primary);
 }
 
 /* Certifications Section */
@@ -370,46 +454,168 @@ body {
   background: radial-gradient(circle at 50% 50%, rgba(255, 0, 110, 0.1) 0%, transparent 70%);
 }
 
-.certifications-list {
-  display: grid;
-  gap: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
+.certs-marquee {
+  animation: marquee-scroll-reverse 30s linear infinite;
 }
 
-.cert-item {
-  display: flex;
-  gap: 2rem;
-  padding: 2rem;
-  background: rgba(26, 31, 58, 0.6);
+.certs-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Cert Card */
+.cert-card {
+  flex-shrink: 0;
+  width: 300px;
+  background: linear-gradient(135deg, rgba(26, 31, 58, 0.9), rgba(40, 30, 60, 0.9));
   border: 1px solid var(--border);
-  border-radius: 10px;
+  padding: 1.25rem;
+  border-radius: 15px;
   transition: all 0.3s ease;
-}
-
-.cert-item:hover {
-  background: rgba(26, 31, 58, 0.9);
-  border-color: var(--accent);
-  transform: translateX(10px);
-}
-
-.cert-number {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: var(--accent);
-  min-width: 60px;
   text-align: center;
 }
 
-.cert-details h3 {
-  color: var(--text);
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(255, 0, 110, 0.2);
+  border-color: var(--accent-alt);
 }
 
-.cert-details p {
+.cert-image {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+}
+
+.cert-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover .cert-image img {
+  transform: scale(1.05);
+}
+
+.cert-card h3 {
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.cert-card p {
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+/* Certificate Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 14, 39, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, rgba(26, 31, 58, 0.95), rgba(30, 58, 95, 0.95));
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 700px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 50px rgba(0, 217, 255, 0.3);
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-size: 2rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  background: var(--accent);
+  color: var(--primary);
+  transform: rotate(90deg);
+}
+
+.modal-image {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.modal-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.modal-details {
+  text-align: center;
+}
+
+.modal-details h2 {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-details p {
   color: var(--text-dim);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 /* Contact Section */
@@ -621,10 +827,21 @@ body {
     gap: 2rem;
   }
 
+  .about-profile {
+    order: -1;
+  }
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+  }
+
   .about-text p {
     font-size: 0.95rem;
     line-height: 1.7;
     margin-bottom: 1rem;
+    text-align: center;
   }
 
   .tech-stack h3 {
@@ -633,7 +850,7 @@ body {
   }
 
   .tech-items {
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
 
   .tech-badge {
@@ -642,61 +859,33 @@ body {
     border-radius: 15px;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
   .project-card {
-    padding: 1.5rem;
-    border-radius: 8px;
+    width: 280px;
+    padding: 1.25rem;
   }
 
-  .project-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.75rem;
+  .project-image {
+    height: 140px;
   }
 
   .project-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
+    font-size: 1rem;
   }
 
   .project-card p {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.85rem;
   }
 
-  .certifications-list {
-    gap: 1.5rem;
-    max-width: 100%;
+  .cert-card {
+    width: 240px;
+    padding: 1rem;
   }
 
-  .cert-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    border-radius: 8px;
+  .cert-image {
+    height: 120px;
   }
 
-  .cert-item:hover,
-  .cert-item:active {
-    transform: translateX(0);
-  }
-
-  .cert-number {
-    font-size: 2rem;
-    min-width: auto;
-  }
-
-  .cert-details h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .cert-details p {
+  .cert-card h3 {
     font-size: 0.9rem;
   }
 

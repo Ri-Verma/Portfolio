@@ -24,6 +24,67 @@ document.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
+// typing animation
+const typingElement = document.getElementById('typing-text');
+const phrases = [
+  'Full-Stack Developer',
+  'Software Engineer',
+  'Web Developer',
+  'Problem Solver'
+];
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingSpeed = 100;
+const deletingSpeed = 50;
+const pauseAfterTyping = 2000;
+const pauseAfterDeleting = 500;
+
+function typeText() {
+  const currentPhrase = phrases[phraseIndex];
+
+  if (isDeleting) {
+    // Deleting characters
+    typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      setTimeout(typeText, pauseAfterDeleting);
+      return;
+    }
+    setTimeout(typeText, deletingSpeed);
+  } else {
+    // Typing characters
+    typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === currentPhrase.length) {
+      isDeleting = true;
+      setTimeout(typeText, pauseAfterTyping);
+      return;
+    }
+    setTimeout(typeText, typingSpeed);
+  }
+}
+
+// looping
+function setupMarqueeLoop() {
+  const marqueeContainers = document.querySelectorAll('.marquee-track');
+
+  marqueeContainers.forEach(track => {
+    const items = track.children;
+    const itemCount = items.length;
+
+    // Clone all items and append to track for seamless loop
+    for (let i = 0; i < itemCount; i++) {
+      const clone = items[i].cloneNode(true);
+      track.appendChild(clone);
+    }
+  });
+}
+
 // Check if device is mobile
 function isMobileDevice() {
   return window.matchMedia('(max-width: 768px)').matches;
@@ -46,9 +107,7 @@ function updateParallax() {
     const sectionHeight = section.offsetHeight;
     const windowHeight = window.innerHeight;
 
-
     const scrollProgress = (scrolled + windowHeight - sectionTop) / (sectionHeight + windowHeight);
-
 
     const offset = scrolled * parallaxValue;
     const scale = 1 + (scrollProgress * 0.03);
@@ -64,15 +123,12 @@ function updateParallax() {
       }
     }
 
-    // Content parallax - use relative offset from section
+    // Content parallax 
     const content = section.querySelector('.content, .card-content');
     if (content && !isMobile) {
-      // Calculate how far the section is from the viewport center
       const sectionCenter = sectionTop + (sectionHeight / 2);
       const viewportCenter = scrolled + (windowHeight / 2);
       const distanceFromCenter = (viewportCenter - sectionCenter) / windowHeight;
-
-      // Apply a subtle parallax effect relative to section position
       const contentOffset = distanceFromCenter * 30 * parallaxValue;
       content.style.transform = `translateY(${contentOffset}px)`;
     }
@@ -98,14 +154,6 @@ function observeElements() {
     });
   }, { threshold: 0.2 });
 
-  document.querySelectorAll('.project-card').forEach(card => {
-    observer.observe(card);
-  });
-
-  document.querySelectorAll('.cert-item').forEach(cert => {
-    observer.observe(cert);
-  });
-
   document.querySelectorAll('.tech-badge').forEach(badge => {
     observer.observe(badge);
   });
@@ -113,26 +161,6 @@ function observeElements() {
 
 function animateElement(element) {
   const classList = element.classList;
-
-  if (classList.contains('project-card')) {
-    anime({
-      targets: element,
-      opacity: [0, 1],
-      translateY: [30, 0],
-      duration: 800,
-      easing: 'easeOutExpo'
-    });
-  }
-
-  if (classList.contains('cert-item')) {
-    anime({
-      targets: element,
-      opacity: [0, 1],
-      translateX: [-30, 0],
-      duration: 800,
-      easing: 'easeOutExpo'
-    });
-  }
 
   if (classList.contains('tech-badge')) {
     anime({
@@ -160,15 +188,12 @@ function animateHero() {
       opacity: [0, 1],
       translateY: [20, 0],
       duration: 800,
-      easing: 'easeOutExpo'
-    }, '-=500')
-    .add({
-      targets: '.cursor-blink',
-      opacity: [1, 0.3, 1],
-      duration: 1000,
-      easing: 'easeInOutQuad',
-      loop: true
-    }, 0);
+      easing: 'easeOutExpo',
+      complete: () => {
+        // Start typing animation after hero animates in
+        setTimeout(typeText, 500);
+      }
+    }, '-=500');
 }
 
 // Section titles animation
@@ -193,8 +218,59 @@ function animateSectionTitles() {
   });
 }
 
+// ============ CERTIFICATE MODAL ============
+function setupCertModal() {
+  const modal = document.getElementById('cert-modal');
+  const modalImage = document.getElementById('modal-cert-image');
+  const modalTitle = document.getElementById('modal-cert-title');
+  const modalIssuer = document.getElementById('modal-cert-issuer');
+  const modalClose = document.querySelector('.modal-close');
+
+  // Open modal when cert card is clicked
+  document.addEventListener('click', (e) => {
+    const certCard = e.target.closest('.cert-card');
+    if (certCard) {
+      const image = certCard.querySelector('.cert-image img');
+      const title = certCard.querySelector('h3');
+      const issuer = certCard.querySelector('p');
+
+      modalImage.src = image.src;
+      modalImage.alt = image.alt;
+      modalTitle.textContent = title.textContent;
+      modalIssuer.textContent = 'Issued by: ' + issuer.textContent;
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  // Close modal when clicking X button
+  modalClose.addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  // Close modal when clicking outside content
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
 // Initialize on page load
 window.addEventListener('load', () => {
+  setupMarqueeLoop();
+  setupCertModal();
   animateHero();
   animateSectionTitles();
   observeElements();
