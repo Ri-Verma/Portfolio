@@ -22,6 +22,7 @@
       <ul id="nav-menu" class="nav-links">
         <li><a href="#hero" class="nav-link">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#work_experience" class="nav-link">Experience</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#certifications" class="nav-link">Skills</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -31,9 +32,16 @@
 
   <section id="hero" class="section hero" data-parallax="0.5">
     <div class="parallax-bg"></div>
-    <div class="content">
-      <h1 class="hero-title">Welcome to My Digital Universe</h1>
-      <p class="hero-subtitle"><span id="typing-text"></span><span class="cursor-blink">|</span></p>
+    <div class="content hero-grid">
+      <div class="hero-text">
+        <h1 class="hero-title">Welcome to My Digital Universe</h1>
+        <p class="hero-subtitle"><span id="typing-text"></span><span class="cursor-blink">|</span></p>
+      </div>
+      <div class="hero-image-container">
+        <div class="profile-image">
+          <img src="./image/me2.jpg" alt="Profile Photo">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -44,18 +52,24 @@
       <div class="about-grid">
         <div class="about-text">
           <p>
-            I'm a passionate web developer and software engineer with expertise in creating
+            I'm a web developer and software engineer with expertise in creating
             beautiful, functional, and scalable applications. My journey in tech is driven by
-            a love for solving complex problems and building user-centric solutions.
+            I have worked with Node.js, Express.js, MySql, MongoDB, and React.js delivering clean APIs and user-friendly
+            interfaces. I have also worked with Python and MySQL to develop a robust CLI based project which showcase my
+            handling with Python and MySql connection and authentication
           </p>
           <p>
+            In college I also woked in different events for organising and managing the events. Showcasing not only
+            technical skills but also my organisational skills.
             With a strong foundation in full-stack development, I specialize in modern web
             technologies and best practices that bring ideas to life.
+            With strong foundation in DSA i structure my data in a way that i can use it in my projects.
+
           </p>
         </div>
         <div class="about-profile">
           <div class="profile-image">
-            <img src="./image/me.jpg" alt="Profile Photo">
+            <img src="./image/group.png" alt="Profile Photo">
           </div>
           <div class="tech-stack">
             <h3>Tech Stack</h3>
@@ -72,6 +86,55 @@
       </div>
     </div>
   </section>
+
+
+  <section id="work_experience" class="section work_experience" data-parallax="0.3">
+    <div class="parallax-bg"></div>
+    <div class="card-content">
+      <div class="section-header">
+        <span class="section-label">Career Path</span>
+        <h1>Work <span>Experience</span></h1>
+      </div>
+      <div class="timeline-container">
+        <div class="experience-card">
+          <span class="exp-date">Jan 2024 - Present</span>
+          <div class="exp-header">
+            <h3>Frontend Developer Intern</h3>
+          </div>
+          <div class="company-info">
+            <span>Tech Solutions Inc.</span>
+            <span class="location">Remote</span>
+          </div>
+          <p class="exp-description">Assisted in the development of a real-time analytics dashboard using React and
+            GraphQL.</p>
+          <ul class="exp-highlights">
+            <li>Built interactive dashboard components using React and TypeScript</li>
+            <li>Improved data fetching efficiency by 40% using GraphQL optimizations</li>
+            <li>Collaborated with design team to implement pixel-perfect UI</li>
+          </ul>
+        </div>
+        <div class="experience-card">
+          <span class="exp-date">Aug 2023 - Dec 2023</span>
+          <div class="exp-header">
+            <h3>Backend Intern</h3>
+          </div>
+          <div class="company-info">
+            <span>Data Systems Ltd.</span>
+            <span class="location">India</span>
+          </div>
+          <p class="exp-description">Developed robust REST APIs using Node.js and Express for enterprise applications.
+          </p>
+          <ul class="exp-highlights">
+            <li>Implemented JWT authentication and role-based access control</li>
+            <li>Managed MongoDB database schemas and optimized queries</li>
+            <li>Prepared technical architecture documentation for team</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
   <section id="projects" class="section projects" data-parallax="0.4">
     <div class="parallax-bg"></div>

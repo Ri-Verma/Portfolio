@@ -158,6 +158,37 @@ body {
   width: 100%;
 }
 
+/* Hero content layout - Text left, Image right */
+.hero .content.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-text {
+  text-align: left;
+}
+
+.hero-text .hero-title {
+  text-align: left;
+}
+
+.hero-text .hero-subtitle {
+  text-align: left;
+}
+
+.hero-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .hero-image-container .profile-image {
+  width: 350px;
+  height: 350px;
+}
+
 /* Hero Section */
 .hero {
   background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
@@ -296,6 +327,22 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* About section - larger image without border */
+.about .about-profile .profile-image {
+  width: 380px;
+  height: auto;
+  min-height: 300px;
+  border: none;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+}
+
+.about .about-profile .profile-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .tech-stack {
@@ -442,7 +489,237 @@ body {
 
 .project-link:hover {
   background: var(--accent);
-  color: var(--primary);
+}
+
+/* Work Experience Section - Timeline Design */
+.work_experience {
+  background: linear-gradient(135deg, #0f1322 0%, #1a1f3a 50%, #0a0e27 100%);
+}
+
+.work_experience .parallax-bg {
+  background: radial-gradient(circle at 70% 30%, rgba(0, 217, 255, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 30% 70%, rgba(255, 0, 110, 0.06) 0%, transparent 60%);
+}
+
+.work_experience .section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.work_experience .section-label {
+  color: var(--accent);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.work_experience h1 {
+  font-size: 2.8rem;
+  color: var(--text);
+  text-shadow: none;
+  letter-spacing: 1px;
+  text-transform: none;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.work_experience h1 span {
+  color: var(--accent);
+}
+
+/* Timeline Container */
+.timeline-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 40px;
+}
+
+/* Vertical Timeline Line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent-alt), transparent);
+}
+
+/* Experience Card */
+.experience-card {
+  background: rgba(15, 20, 35, 0.95);
+  border: 1px solid rgba(30, 58, 95, 0.5);
+  padding: 1.75rem 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* Timeline Dot */
+.experience-card::before {
+  content: '';
+  position: absolute;
+  left: -38px;
+  top: 1.5rem;
+  width: 18px;
+  height: 18px;
+  background: var(--primary);
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--accent), 0 0 30px rgba(0, 217, 255, 0.3);
+  z-index: 1;
+}
+
+.experience-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 30px rgba(0, 217, 255, 0.15);
+  border-color: rgba(0, 217, 255, 0.3);
+}
+
+/* Date Badge */
+.exp-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 217, 255, 0.08);
+  color: var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.exp-date::before {
+  content: '📅';
+  font-size: 0.9rem;
+}
+
+/* Job Title */
+.exp-header h3 {
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Company Info */
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.company-info::before {
+  content: '🏢';
+  font-size: 0.9rem;
+}
+
+.company-info .location {
+  color: var(--text-dim);
+}
+
+.company-info .location::before {
+  content: '•';
+  margin: 0 0.5rem;
+  color: var(--text-dim);
+}
+
+/* Description */
+.experience-card .exp-description {
+  color: var(--text-dim);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Bullet Points */
+.exp-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.exp-highlights li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.exp-highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .work_experience .section-label {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+  }
+
+  .work_experience h1 {
+    font-size: 2rem;
+  }
+
+  .timeline-container {
+    padding-left: 30px;
+  }
+
+  .timeline-container::before {
+    left: 6px;
+  }
+
+  .experience-card::before {
+    left: -28px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .experience-card {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .exp-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .exp-date {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-container {
+    padding-left: 25px;
+  }
+
+  .experience-card::before {
+    left: -23px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .experience-card {
+    padding: 1rem 1.25rem;
+  }
 }
 
 /* Certifications Section */
@@ -730,6 +1007,21 @@ body {
   .projects-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
+
+  /* Hero grid responsive */
+  .hero .content.hero-grid {
+    gap: 2rem;
+  }
+
+  .hero .hero-image-container .profile-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* About section image responsive */
+  .about .about-profile .profile-image {
+    width: 320px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -816,6 +1108,32 @@ body {
     margin-left: 0.25rem;
   }
 
+  /* Hero grid mobile - stack vertically, image on top */
+  .hero .content.hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-text {
+    order: 2;
+    text-align: center;
+  }
+
+  .hero-text .hero-title,
+  .hero-text .hero-subtitle {
+    text-align: center;
+  }
+
+  .hero-image-container {
+    order: 1;
+  }
+
+  .hero .hero-image-container .profile-image {
+    width: 220px;
+    height: 220px;
+  }
+
   .section-title {
     font-size: 1.75rem;
     margin-bottom: 2rem;
@@ -835,6 +1153,12 @@ body {
     width: 200px;
     height: 200px;
     border-radius: 15px;
+  }
+
+  /* About section image responsive */
+  .about .about-profile .profile-image {
+    width: 280px;
+    min-height: 200px;
   }
 
   .about-text p {
@@ -968,6 +1292,12 @@ body {
     height: 1.2rem;
   }
 
+  /* Hero grid for small screens */
+  .hero .hero-image-container .profile-image {
+    width: 180px;
+    height: 180px;
+  }
+
   .section-title {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
@@ -976,6 +1306,12 @@ body {
 
   .about-grid {
     gap: 1.5rem;
+  }
+
+  /* About section image for small screens */
+  .about .about-profile .profile-image {
+    width: 240px;
+    min-height: 160px;
   }
 
   .about-text p {
