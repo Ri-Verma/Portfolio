@@ -329,6 +329,16 @@ body {
   object-fit: cover;
 }
 
+/* Clickable image cursor */
+.clickable-image {
+  cursor: pointer;
+}
+
+.clickable-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(0, 217, 255, 0.6);
+}
+
 /* About section - larger image without border */
 .about .about-profile .profile-image {
   width: 380px;

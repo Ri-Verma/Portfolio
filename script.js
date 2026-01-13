@@ -40,6 +40,11 @@ const deletingSpeed = 50;
 const pauseAfterTyping = 2000;
 const pauseAfterDeleting = 500;
 
+
+// Landing page typing effect
+
+
+
 function typeText() {
   const currentPhrase = phrases[phraseIndex];
 
@@ -69,6 +74,12 @@ function typeText() {
   }
 }
 
+
+
+
+
+
+
 // looping
 function setupMarqueeLoop() {
   const marqueeContainers = document.querySelectorAll('.marquee-track');
@@ -84,6 +95,7 @@ function setupMarqueeLoop() {
     }
   });
 }
+
 
 // Check if device is mobile
 function isMobileDevice() {
@@ -196,6 +208,9 @@ function animateHero() {
     }, '-=500');
 }
 
+
+
+
 // Section titles animation
 function animateSectionTitles() {
   document.querySelectorAll('.section-title').forEach((title, index) => {
@@ -217,6 +232,10 @@ function animateSectionTitles() {
     observer.observe(title);
   });
 }
+
+
+
+
 
 // ============ CERTIFICATE MODAL ============
 function setupCertModal() {
@@ -267,10 +286,52 @@ function setupCertModal() {
   });
 }
 
+// ============ IMAGE MODAL ============
+function setupImageModal() {
+  const imageModal = document.getElementById('image-modal');
+  const modalImageSrc = document.getElementById('modal-image-src');
+  const modalCloseBtn = imageModal.querySelector('.modal-close');
+
+  // Open modal when clickable image is clicked
+  document.addEventListener('click', (e) => {
+    const clickableImage = e.target.closest('.clickable-image img');
+    if (clickableImage) {
+      modalImageSrc.src = clickableImage.src;
+      modalImageSrc.alt = clickableImage.alt;
+
+      imageModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  // Close modal when clicking X button
+  modalCloseBtn.addEventListener('click', () => {
+    imageModal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  // Close modal when clicking outside content
+  imageModal.addEventListener('click', (e) => {
+    if (e.target === imageModal) {
+      imageModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+      imageModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
 // Initialize on page load
 window.addEventListener('load', () => {
   setupMarqueeLoop();
   setupCertModal();
+  setupImageModal();
   animateHero();
   animateSectionTitles();
   observeElements();

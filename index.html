@@ -11,6 +11,13 @@
 </head>
 
 <body>
+
+
+<!-- Navigation -->
+
+
+
+
   <nav id="navbar" class="navbar">
     <div class="nav-container">
       <h2 class="logo">DEV.PORTFOLIO</h2>
@@ -30,6 +37,20 @@
     </div>
   </nav>
 
+
+
+
+
+
+
+<!-- Landing Section -->
+
+
+
+
+
+
+
   <section id="hero" class="section hero" data-parallax="0.5">
     <div class="parallax-bg"></div>
     <div class="content hero-grid">
@@ -38,12 +59,29 @@
         <p class="hero-subtitle"><span id="typing-text"></span><span class="cursor-blink">|</span></p>
       </div>
       <div class="hero-image-container">
-        <div class="profile-image">
+        <div class="profile-image clickable-image">
           <img src="./image/me2.jpg" alt="Profile Photo">
         </div>
       </div>
     </div>
   </section>
+
+
+
+
+
+
+
+
+<!--  About -->
+
+
+
+
+
+
+
+
 
   <section id="about" class="section about" data-parallax="0.3">
     <div class="parallax-bg"></div>
@@ -68,7 +106,7 @@
           </p>
         </div>
         <div class="about-profile">
-          <div class="profile-image">
+          <div class="profile-image clickable-image">
             <img src="./image/group.png" alt="Profile Photo">
           </div>
           <div class="tech-stack">
@@ -86,6 +124,16 @@
       </div>
     </div>
   </section>
+
+
+
+
+
+
+<!-- Experience -->
+
+
+
 
 
   <section id="work_experience" class="section work_experience" data-parallax="0.3">
@@ -150,6 +198,12 @@
 
 
 
+
+<!-- Projects -->
+
+
+
+
   <section id="projects" class="section projects" data-parallax="0.4">
     <div class="parallax-bg"></div>
     <div class="card-content">
@@ -184,6 +238,11 @@
       </div>
     </div>
   </section>
+
+
+<!-- Certifications -->
+
+
 
   <section id="certifications" class="section certifications" data-parallax="0.35">
     <div class="parallax-bg"></div>
@@ -222,6 +281,13 @@
     </div>
   </section>
 
+
+
+<!-- Contact  -->
+
+
+
+
   <section id="contact" class="section contact" data-parallax="0.25">
     <div class="parallax-bg"></div>
     <div class="card-content">
@@ -250,6 +316,16 @@
       <div class="modal-details">
         <h2 id="modal-cert-title"></h2>
         <p id="modal-cert-issuer"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="image-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div class="modal-image">
+        <img id="modal-image-src" src="" alt="Image">
       </div>
     </div>
   </div>
