@@ -80,23 +80,6 @@ function typeText() {
 
 
 
-// looping
-function setupMarqueeLoop() {
-  const marqueeContainers = document.querySelectorAll('.marquee-track');
-
-  marqueeContainers.forEach(track => {
-    const items = track.children;
-    const itemCount = items.length;
-
-    // Clone all items and append to track for seamless loop
-    for (let i = 0; i < itemCount; i++) {
-      const clone = items[i].cloneNode(true);
-      track.appendChild(clone);
-    }
-  });
-}
-
-
 // Check if device is mobile
 function isMobileDevice() {
   return window.matchMedia('(max-width: 768px)').matches;
@@ -286,6 +269,62 @@ function setupCertModal() {
   });
 }
 
+// ============ PROJECT MODAL ============
+function setupProjectModal() {
+  const modal = document.getElementById('project-modal');
+  const modalImage = document.getElementById('modal-project-image');
+  const modalTitle = document.getElementById('modal-project-title');
+  const modalDesc = document.getElementById('modal-project-desc');
+  const modalLink = document.getElementById('modal-project-link');
+  const modalClose = modal.querySelector('.modal-close');
+
+  // Open modal when a project card is clicked (but not when the
+  // GitHub link itself is clicked - let that navigate normally)
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('#project-modal')) return;
+    if (e.target.closest('.project-card .project-link')) return;
+
+    const projectCard = e.target.closest('.project-card');
+    if (projectCard) {
+      const image = projectCard.querySelector('.project-image img');
+      const title = projectCard.querySelector('h3');
+      const desc = projectCard.querySelector('.project-card-body p');
+      const link = projectCard.querySelector('.project-link');
+
+      modalImage.src = image.src;
+      modalImage.alt = image.alt;
+      modalTitle.textContent = title.textContent;
+      modalDesc.textContent = desc.textContent;
+      modalLink.href = link.href;
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  // Close modal when clicking X button
+  modalClose.addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  // Close modal when clicking outside content
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
 // ============ IMAGE MODAL ============
 function setupImageModal() {
   const imageModal = document.getElementById('image-modal');
@@ -358,8 +397,8 @@ function setupEntryGate() {
 
 // Initialize on page load
 window.addEventListener('load', () => {
-  setupMarqueeLoop();
   setupCertModal();
+  setupProjectModal();
   setupImageModal();
   setupEntryGate();
   animateSectionTitles();
