@@ -338,8 +338,8 @@ body.gate-active .section {
 .card-content {
   position: relative;
   z-index: 3;
-  max-width: 1200px;
-  width: 100%;
+  width: 90%;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0;
 }
@@ -465,8 +465,9 @@ body.gate-active .section {
 
 /* Section Styling */
 .section-title {
+  display: block;
   font-size: 3rem;
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem;
   color: var(--accent);
   text-shadow: 0 0 20px var(--accent);
   letter-spacing: 3px;
@@ -484,16 +485,18 @@ body.gate-active .section {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10rem;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
   align-items: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .about-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 130%;
+  width: 100%;
 }
 
 .about-text p {
@@ -612,9 +615,10 @@ body.gate-active .section {
 /* Marquee Container */
 .marquee-container {
   width: 100%;
+  margin: 0 auto;
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
 .marquee-track {
@@ -644,7 +648,7 @@ body.gate-active .section {
 /* Project Card */
 .project-card {
   flex-shrink: 0;
-  width: 350px;
+  width: min(32vw, 380px);
   display: flex;
   flex-direction: column;
   background: linear-gradient(135deg, rgba(18, 18, 18, 0.92), rgba(26, 26, 26, 0.92));
@@ -653,7 +657,6 @@ body.gate-active .section {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  
 }
 
 /* Top accent bar - standardizes the "unfinished" edge across cards */
@@ -783,10 +786,16 @@ body.gate-active .section {
   color: var(--accent);
 }
 
+/* Experience Layout - Timeline left, Quote right */
+.experience-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2.5rem;
+  align-items: start;
+}
+
 /* Timeline Container */
 .timeline-container {
-  max-width: 800px;
-  margin: 0 auto;
   position: relative;
 }
 
@@ -844,6 +853,43 @@ body.gate-active .section {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  min-height: 260px;
+}
+
+.experience-quote-card {
+  position: sticky;
+  top: 110px;
+  background: linear-gradient(180deg, rgba(15, 15, 15, 0.86), rgba(24, 24, 24, 0.94));
+  border: 1px solid rgba(255, 204, 0, 0.35);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-self: start;
+}
+
+.quote-mark {
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+.experience-quote-card blockquote {
+  color: var(--text);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  font-family: var(--font-sans);
+}
+
+.quote-author {
+  color: var(--accent);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
 }
 
 /* Top accent bar - same visual language as project/cert cards */
@@ -862,6 +908,17 @@ body.gate-active .section {
   transform: translateX(5px);
   box-shadow: 0 8px 30px rgba(255, 204, 0, 0.15);
   border-color: rgba(255, 204, 0, 0.3);
+}
+
+@media (max-width: 900px) {
+  .experience-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-quote-card {
+    position: static;
+    margin-top: 1rem;
+  }
 }
 
 /* Date Badge */
@@ -1049,7 +1106,7 @@ body.gate-active .section {
 /* Cert Card */
 .cert-card {
   flex-shrink: 0;
-  width: 300px;
+  width: min(26vw, 360px);
   display: flex;
   flex-direction: column;
   background: linear-gradient(135deg, rgba(18, 18, 18, 0.92), rgba(24, 24, 24, 0.92));
