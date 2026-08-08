@@ -4,13 +4,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#0a0e27" />
+  <meta name="theme-color" content="#0a0a0a" />
   <meta name="description" content="Portfolio website of a Full-Stack Developer and Software Engineer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <title>Dev Portfolio - Software Engineer</title>
 </head>
 
-<body>
+<body class="gate-active">
+
+  <!-- Entry Gate -->
+  <div id="entry-gate" class="entry-gate" role="button" tabindex="0" aria-label="Enter portfolio">
+    <div class="entry-box">
+      <div class="entry-box-bar">
+        <span class="entry-dot dot-red"></span>
+        <span class="entry-dot dot-yellow"></span>
+        <span class="entry-dot dot-white"></span>
+        <span class="entry-box-path">guest@rishikesh:~</span>
+      </div>
+      <div class="entry-box-body">
+        <p class="entry-line"><span class="entry-prompt">$</span>whoami</p>
+        <p class="entry-line entry-line-out">visitor</p>
+        <p class="entry-line"><span class="entry-prompt">$</span>./enter_portfolio.sh</p>
+        <h2 class="entry-welcome">Welcome<span class="entry-cursor">_</span></h2>
+        <p class="entry-cta">Click here to enter</p>
+      </div>
+    </div>
+  </div>
 
 
 <!-- Navigation -->
@@ -144,53 +166,60 @@
         <h1>Work <span>Experience</span></h1>
       </div>
       <div class="timeline-container">
-        <div class="experience-card">
-          <span class="exp-date">June 2025 - July 2025</span>
-          <div class="exp-header">
-            <h3>Student Trainee</h3>
+        <div class="timeline-row">
+          <span class="timeline-dot"></span>
+          <div class="experience-card">
+            <span class="exp-date">June 2025 - July 2025</span>
+            <div class="exp-header">
+              <h3>Student Trainee</h3>
+            </div>
+            <div class="company-info">
+              <span>Indian Railways</span>
+              <span class="location">India</span>
+            </div>
+            <p class="exp-description">Assisted with CISCO routers and Network configuration across Indian Railway</p>
+            <ul class="exp-highlights">
+              <li>Simulated configurations on 6 Cisco routers utilizing OSPF protocol, decreasing network latency by 12% and enhancing the data transfer rate between MDCH and station endpoints over OFC links.</li>
+              <li>Audited the network topology of Indian Railways' Integrated Passenger Information System, deployed Cisco routers and Ethernet switches to manage data traffic between Main Data Communication Hubs (MDCH).</li>
+            </ul>
           </div>
-          <div class="company-info">
-            <span>Indian Railways</span>
-            <span class="location">India</span>
-          </div>
-          <p class="exp-description">Assisted with CISCO routers and Network configuration across Indian Railway</p>
-          <ul class="exp-highlights">
-            <li>Simulated configurations on 6 Cisco routers utilizing OSPF protocol, decreasing network latency by 12% and enhancing the data transfer rate between MDCH and station endpoints over OFC links.</li>
-            <li>Audited the network topology of Indian Railways' Integrated Passenger Information System, deployed Cisco routers and Ethernet switches to manage data traffic between Main Data Communication Hubs (MDCH).</li>
-          </ul>
         </div>
-        <div class="experience-card">
-          <span class="exp-date">July 2023 - August 2023</span>
-          <div class="exp-header">
-            <h3>Student Intern</h3>
+        <div class="timeline-row">
+          <span class="timeline-dot"></span>
+          <div class="experience-card">
+            <span class="exp-date">July 2023 - August 2023</span>
+            <div class="exp-header">
+              <h3>Student Intern</h3>
+            </div>
+            <div class="company-info">
+              <span>Tech Booster</span>
+              <span class="location">India</span>
+            </div>
+            <p class="exp-description">Worked with Python Language and IOT devices.</p>
+            <ul class="exp-highlights">
+              <li>Completed a 1-week training program in "Python Programming," gaining foundational knowledge and building numerous projects to expand my expertise in the field.</li>
+              <li>Completed a 2-week training program in "Robotics & IoT," where I worked on various small projects, such as developing a miniature Bluetooth-controlled motor car, further expanding my knowledge and skills.</li>
+              <li>Completed a 1-week course on "Basic Adobe Illustrator," acquiring essential skills and creating multiple projects to broaden my proficiency in digital design.</li>
+            </ul>
           </div>
-          <div class="company-info">
-            <span>Tech Booster</span>
-            <span class="location">India</span>
-          </div>
-          <p class="exp-description">Worked with  Python Language and IOT devices.
-          </p>
-          <ul class="exp-highlights">
-            <li>Completed a 1-week training program in "Python Programming," gaining foundational knowledge and building numerous projects to expand my expertise in the field.</li>
-            <li>MCompleted a 2-week training program in "Robotics & IoT," where I worked on various small projects, such as developing a miniature Bluetooth-controlled motor car, further expanding my knowledge and skills.</li>
-            <li>Completed a 1-week course on "Basic Adobe Illustrator," acquiring essential skills and creating multiple projects to broaden my proficiency in digital design.</li>
-          </ul>
         </div>
-        <div class="experience-card">
-          <span class="exp-date">August 2023 - August 2024</span>
-          <div class="exp-header">
-            <h3>Website Manager</h3>
+        <div class="timeline-row">
+          <span class="timeline-dot"></span>
+          <div class="experience-card">
+            <span class="exp-date">August 2023 - August 2024</span>
+            <div class="exp-header">
+              <h3>Website Manager</h3>
+            </div>
+            <div class="company-info">
+              <span>Google Developer Student Club - Gauhati University</span>
+              <span class="location">India</span>
+            </div>
+            <p class="exp-description">Managed the website of Google Developer Student Club - Gauhati University.</p>
+            <ul class="exp-highlights">
+              <li>Performed routine website management and operational maintenance, proactively identifying and resolving bugs and technical errors.</li>
+              <li>Ensured continuous site functionality and an optimal user experience by updating content and integrating new event data.</li>
+            </ul>
           </div>
-          <div class="company-info">
-            <span>Google Developer Student Club - Gauhati University</span>
-            <span class="location">India</span>
-          </div>
-          <p class="exp-description">Managed the website of Google Developer Student Club - Gauhati University.
-          </p>
-          <ul class="exp-highlights">
-            <li>Performed routine website management and operational maintenance, proactively identifying and resolving bugs and technical errors.</li>
-            <li>Ensured continuous site functionality and an optimal user experience by updating content and integrating new event data.</li>
-          </ul>
         </div>
       </div>
     </div>
@@ -212,27 +241,31 @@
         <div class="marquee-track projects-marquee">
           <div class="project-card">
             <div class="project-image"><img src="./image/Meme Hub Social Media Platform.png" alt="Meme Hub"></div>
-            <h3>Meme Hub Social Media</h3>
-            <p>A full-stack social media app with MySQL database, 60% optimized SQL aggregations, and secure media
-              handling with Multer.</p>
-            <a href="https://github.com/Ri-Verma/MemeHub" class="project-link" target="_blank">View on GitHub</a>
+            <div class="project-card-body">
+              <h3>Meme Hub Social Media</h3>
+              <p>A full-stack social media app with MySQL database, 60% optimized SQL aggregations, and secure media
+                handling with Multer.</p>
+              <a href="https://github.com/Ri-Verma/MemeHub" class="project-link" target="_blank">View on GitHub</a>
+            </div>
           </div>
           <div class="project-card">
             <div class="project-image"><img src="./image/TerraLedger.png" alt="TerraLedger"></div>
-            <h3>TerraLedger</h3>
-            <p>Decentralized land registry on Ethereum using React, TypeScript & Solidity with smart contract ownership
-              transfer.</p>
-            <a href="https://github.com/Ri-Verma/TerraLedger" class="project-link" target="_blank">View on GitHub</a>
+            <div class="project-card-body">
+              <h3>TerraLedger</h3>
+              <p>Decentralized land registry on Ethereum using React, TypeScript & Solidity with smart contract
+                ownership transfer.</p>
+              <a href="https://github.com/Ri-Verma/TerraLedger" class="project-link" target="_blank">View on GitHub</a>
+            </div>
           </div>
           <div class="project-card">
             <div class="project-image"><img src="./image/vehicle.jpg" alt="Vehicle Rental Control Hub"></div>
-            <h3>Vehicle Rental Control Hub</h3>
-            <p>Vehicle Rental Control Hub Developed a robust car rental management application using Python and MySQL to
-              streamline vehicle booking operations. The system automates rental cost calculations based on real-time
-              model selection and duration, while ensuring data integrity through secure SQL storage of user profiles
-              and transaction history.</p>
-            <a href="https://github.com/Ri-Verma/Vehicle-Rental-Control-Hub" class="project-link" target="_blank">View
-              on GitHub</a>
+            <div class="project-card-body">
+              <h3>Vehicle Rental Control Hub</h3>
+              <p>Car rental management app built with Python and MySQL that automates rental cost calculations by
+                model and duration, with secure SQL storage of user profiles and transaction history.</p>
+              <a href="https://github.com/Ri-Verma/Vehicle-Rental-Control-Hub" class="project-link"
+                target="_blank">View on GitHub</a>
+            </div>
           </div>
         </div>
       </div>
@@ -252,29 +285,39 @@
         <div class="marquee-track certs-marquee">
           <div class="cert-card">
             <div class="cert-image"><img src="./image/Coursera 0001.jpg" alt="Cybersecurity"></div>
-            <h3>Foundations of Cybersecurity</h3>
-            <p>Google</p>
+            <div class="cert-card-body">
+              <h3>Foundations of Cybersecurity</h3>
+              <p>Google</p>
+            </div>
           </div>
           <div class="cert-card">
             <div class="cert-image"><img src="./image/134_Rishikesh Verma.jpg_page-0001.jpg" alt="Network Security">
             </div>
-            <h3>Cybersecurity & Network Security</h3>
-            <p>ABC Academy</p>
+            <div class="cert-card-body">
+              <h3>Cybersecurity & Network Security</h3>
+              <p>ABC Academy</p>
+            </div>
           </div>
           <div class="cert-card">
             <div class="cert-image"><img src="./image/Coursera 0001.jpg" alt="Security Risks"></div>
-            <h3>Play it Safe: Manage Security Risks</h3>
-            <p>Google</p>
+            <div class="cert-card-body">
+              <h3>Play it Safe: Manage Security Risks</h3>
+              <p>Google</p>
+            </div>
           </div>
           <div class="cert-card">
             <div class="cert-image"><img src="./image/certificate_of_merit.png" alt="Codegem"></div>
-            <h3>Winner at Codegem</h3>
-            <p>Dept. Information Technology</p>
+            <div class="cert-card-body">
+              <h3>Winner at Codegem</h3>
+              <p>Dept. Information Technology</p>
+            </div>
           </div>
           <div class="cert-card">
             <div class="cert-image"><img src="./image/website manager.jpg" alt="GDSC"></div>
-            <h3>Website Manager at GDSC</h3>
-            <p>Google Developer Student Clubs</p>
+            <div class="cert-card-body">
+              <h3>Website Manager at GDSC</h3>
+              <p>Google Developer Student Clubs</p>
+            </div>
           </div>
         </div>
       </div>

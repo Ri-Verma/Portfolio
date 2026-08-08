@@ -327,12 +327,41 @@ function setupImageModal() {
   });
 }
 
+// ============ ENTRY GATE ============
+function setupEntryGate() {
+  const gate = document.getElementById('entry-gate');
+  if (!gate) return;
+
+  let opened = false;
+
+  function enterSite() {
+    if (opened) return;
+    opened = true;
+
+    gate.classList.add('closing');
+    document.body.classList.remove('gate-active');
+
+    setTimeout(() => {
+      gate.remove();
+      animateHero();
+    }, 500);
+  }
+
+  gate.addEventListener('click', enterSite);
+  gate.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      enterSite();
+    }
+  });
+}
+
 // Initialize on page load
 window.addEventListener('load', () => {
   setupMarqueeLoop();
   setupCertModal();
   setupImageModal();
-  animateHero();
+  setupEntryGate();
   animateSectionTitles();
   observeElements();
   updateParallax();
